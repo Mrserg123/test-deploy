@@ -4,9 +4,3 @@ services:
     build: .
     ports:
       - "3010:3000"
-    volumes:
-      - .:/app # твой код
-      - /app/node_modules # node_modules останется внутри контейнера
-    command: npm start
-    environment:
-      NODE_ENV: development
