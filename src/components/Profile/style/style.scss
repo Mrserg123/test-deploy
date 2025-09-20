@@ -1,0 +1,81 @@
+
+$header-background-color: #1976d2;
+$header-text-color:white;
+$card-width:220px;
+
+
+.header{
+    background-color: $header-background-color;
+    min-height: 64px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header_text{
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $header-text-color;
+    cursor: pointer;
+}
+.body_list{
+    display: flex;
+    justify-content: center;
+    margin:0 30px 0 30px ;
+}
+.card{
+    display: flex;
+    align-items: center;
+    min-width:$card-width;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.card_user{
+    max-width: 900px;
+    width: 100%;
+    border-bottom-style:solid;
+    margin: 0 15px;
+    border-bottom-color: rgba(0, 0, 0, 0.12);
+    border-bottom-width:thin;
+}
+.card_user_inf{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0 8px 0;
+}
+.list_user{
+    display: flex;
+    justify-content: center;
+}
+.input_text {
+    padding: 16px;
+    margin:8px 0px 8px 0px;
+    border:1px #aba8a8 solid;
+    border-radius: 4px;
+    max-width: 300px;
+    width: 100%;
+  }
+  .input_text:focus{
+    outline: none;
+  }
+
+  .inf_repo{
+    display: flex;
+    align-content: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    font-size:12px;
+  }
+  .inf_err_text{
+      text-align: center;
+  }
+  .text_bio{
+      padding-bottom: 15px;
+      margin: 0 auto;
+      max-width: 900px;
+  }
