@@ -21,7 +21,7 @@ jobs:
         debug: true
         port: 22
         script: |
-          cd /home/deploy/project
+          cd /home/deploy/projects
           git pull origin main
           docker compose down
           docker compose up -d --build
