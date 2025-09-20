@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  app:
+    image: node:20               # Node.js 20, замени если нужно другой образ
+    container_name: test_deploy  # имя контейнера
+    working_dir: /usr/src/app
+    volumes:
+      - ./:/usr/src/app          # монтируем текущую папку проекта
+    ports:
+      - "3000:3000"              # порт для внешнего доступа
+    command: npm start           # команда запуска проекта
+    environment:
+      NODE_ENV: development
+    restart: unless-stopped
