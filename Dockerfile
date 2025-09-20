@@ -1,17 +1,11 @@
-# Use Node.js to build the app
-FROM node:16 AS build
-
-WORKDIR /app
-
-COPY package*.json ./
-RUN npm install
-
-COPY . .
-RUN npm run build
-
-# Use Nginx to serve the built files
+# Используем легкий Nginx образ
 FROM nginx:alpine
 
-COPY --from=build /app/build /usr/share/nginx/html
-EXPOSE 80
+# Копируем уже готовый билд в папку по умолчанию Nginx
+COPY build/ /usr/share/nginx/html
+
+# Экспонируем порт
+EXPOSE 3000
+
+# Запускаем Nginx в форграунд режиме
 CMD ["nginx", "-g", "daemon off;"]
