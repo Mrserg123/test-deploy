@@ -1,16 +1,17 @@
+# Use Node.js to build the app
+FROM node:16 AS build
+
 WORKDIR /app
 
 COPY package*.json ./
 RUN npm install
-COPY . .
 
-# Собираем проект в продакшн
+COPY . .
 RUN npm run build
 
-# Берём лёгкий сервер для отдачи собранных файлов
+# Use Nginx to serve the built files
 FROM nginx:alpine
+
 COPY --from=build /app/build /usr/share/nginx/html
-
-EXPOSE 3000
-
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
