@@ -8,7 +8,7 @@ services:
     volumes:
       - ./:/usr/src/app          # монтируем текущую папку проекта
     ports:
-      - "3000:3000"              # порт для внешнего доступа
+      - "3008:3000"              # порт для внешнего доступа
     command: npm start           # команда запуска проекта
     environment:
       NODE_ENV: development
