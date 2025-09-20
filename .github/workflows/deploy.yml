@@ -22,6 +22,7 @@ jobs:
         port: 22
         script: |
           cd /home/deploy/projects/test-deploy
+          git config --global --add safe.directory /home/***/projects/test-***
           git pull origin main
           docker compose down
           docker compose up -d --build
