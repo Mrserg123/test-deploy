@@ -1,10 +1,11 @@
 FROM nginx:alpine
 
-# Копируем билд React
+# Копируем билд
 COPY build/ /usr/share/nginx/html
 
-# Экспонируем порт
-EXPOSE 80
+# Кладём свой конфиг вместо дефолтного
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Запуск Nginx
+EXPOSE 3000
+
 CMD ["nginx", "-g", "daemon off;"]
